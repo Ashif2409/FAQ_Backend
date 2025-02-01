@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_URL=redis://redis:6379
+      - ACCESS_KEY=${ACCESS_KEY}
+      - SECRET_KEY=${SECRET_KEY}
+      - AWS_REGION=ap-south-1  # Set your region to Mumbai (ap-south-1)
+      - AWS_EC2_METADATA_DISABLED=true # Prevent AWS SDK from checking EC2 metadata
+    depends_on:
+      - mongo
+      - redis
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  mongo-data:
+  redis-data:
