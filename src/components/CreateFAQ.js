@@ -12,7 +12,7 @@ const CreateFAQ = () => {
     e.preventDefault();
     setLoading(true);  // Set loading to true when the form is submitted
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/faqs', {
+      const response = await axios.post('/api/v1/faqs', {
         question,
         answer,
       }, {
