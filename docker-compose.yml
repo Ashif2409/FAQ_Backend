@@ -11,8 +11,8 @@ services:
       - REDIS_URL=${REDIS_URL}
       - ACCESS_KEY=${ACCESS_KEY}
       - SECRET_KEY=${SECRET_KEY}
-      - AWS_REGION=ap-south-1  # Set your region to Mumbai (ap-south-1)
-      - AWS_EC2_METADATA_DISABLED=true # Prevent AWS SDK from checking EC2 metadata
+      - AWS_REGION=ap-south-1  
+      - AWS_EC2_METADATA_DISABLED=true 
     depends_on:
       - mongo
       - redis
