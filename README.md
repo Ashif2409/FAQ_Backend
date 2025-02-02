@@ -1,6 +1,13 @@
-# FAQ Translation API
+# FAQ Translation API  
 
-This project provides an API to manage FAQs (Frequently Asked Questions) with translation capabilities. The backend is built with Express.js, MongoDB, Redis, and AWS Translate. The system automatically translates questions and answers into multiple languages ('English','Hindi','Bengoli','Telugu','Gujarati') and caches the translated content in Redis for efficient retrieval.
+This project provides an API to manage FAQs (Frequently Asked Questions) with translation capabilities. The backend is built with **Express.js, MongoDB, Redis, and AWS Translate**. The system automatically translates questions and answers into multiple languages: **English, Hindi, Bengali, Telugu, and Gujarati**. It also caches the translated content in Redis for efficient retrieval.  
+
+### 🔗 Live Link: [FAQ Frontend](https://faq-frontend-jono.onrender.com/)  
+### 📄 API Documentation: [Postman Docs](https://documenter.getpostman.com/view/21537931/2sAYX3r3r9)  
+### 🎥 Demo Video: [Watch Demo](https://drive.google.com/file/d/1Ber08LBk9--9q5d7xzhhwV-6flN09xCV/view?usp=sharing)  
+### 📂 Resume: [View Resume](https://drive.google.com/file/d/1cqR29yToNKvsrCEnKpR623r72Rk0-oAh/view?usp=sharing)  
+
+---
 
 ## Features
 - **FAQ Management**: Create and fetch FAQs.
