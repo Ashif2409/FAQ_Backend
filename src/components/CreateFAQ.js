@@ -6,13 +6,13 @@ const CreateFAQ = () => {
   const [answer, setAnswer] = useState('');
   const [language, setLanguage] = useState('en');
   const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);  // Loading state
+  const [loading, setLoading] = useState(false);  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);  // Set loading to true when the form is submitted
+    setLoading(true); 
     try {
-      const response = await axios.post('/api/v1/faqs', {
+      const response = await axios.post('https://faq-backend-c1fy.onrender.com/api/v1/faqs', {
         question,
         answer,
       }, {
@@ -24,7 +24,7 @@ const CreateFAQ = () => {
       setMessage('Failed to create FAQ');
       console.error(error);
     } finally {
-      setLoading(false);  // Set loading to false after the request completes
+      setLoading(false);  
     }
   };
 
