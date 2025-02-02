@@ -10,8 +10,8 @@ const FAQList = () => {
   const fetchFAQs = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("/api/v1/faqs/translate", {
-        params: { lang: "en" }, // Default language as 'en'
+      const response = await axios.get("https://faq-backend-c1fy.onrender.com/api/v1/faqs/translate", {
+        params: { lang: "en" }, 
       });
       setFaqs(response.data);
     } catch (error) {
@@ -28,13 +28,13 @@ const FAQList = () => {
   // Handle translating FAQ to the selected language
   const handleTranslate = async (faqId, lang) => {
     try {
-      const response = await axios.get(`/api/v1/faqs/translate/${faqId}`, {
+      const response = await axios.get(`https://faq-backend-c1fy.onrender.com/api/v1/faqs/translate/${faqId}`, {
         params: { lang },
       });
 
       setTranslations((prev) => ({
         ...prev,
-        [faqId]: response.data, // Store the translated question & answer for the specific FAQ
+        [faqId]: response.data, 
       }));
     } catch (error) {
       console.error("Error translating FAQ:", error);
